@@ -12,9 +12,10 @@ export interface NavItemProps {
   hasChildren?: boolean;
   badgeCount?: number;
   children?: React.ReactNode;
+  rightIcon?: React.ReactNode;
 }
 
-const NavItem = ({ icon, title, hasChildren = false, badgeCount, children }: NavItemProps) => {
+const NavItem = ({ icon, title, hasChildren = false, badgeCount, children,rightIcon }: NavItemProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -38,7 +39,7 @@ const NavItem = ({ icon, title, hasChildren = false, badgeCount, children }: Nav
           {hasChildren && (
             isExpanded ? (
               <ChevronDown className="w-4 h-4" />
-            ) : (
+            ) :rightIcon?rightIcon: (
               <ChevronRight className="w-4 h-4" />
             )
           )}

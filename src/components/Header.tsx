@@ -1,14 +1,24 @@
+import { DownloadCloudIcon, PlusIcon } from "lucide-react";
 import { Button } from "./ui/button";
-
- 
 
 export default function Header() {
   return (
-    <div className="flex justify-between items-center">
-      <h1 className="text-2xl font-semibold">Sales overview</h1>
-      <div className="space-x-2">
-        <Button variant="outline">Export report</Button>
-        <Button>Invite</Button>
+    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+      <div>
+        <h1 className="text-xl sm:text-2xl font-semibold">Sales overview</h1>
+        <h5 className="text-sm text-muted-foreground">
+          Your current sales summary and activity
+        </h5>
+      </div>
+      <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+        <Button variant="outline" className="flex items-center gap-2">
+          <DownloadCloudIcon className="w-4 h-4" />
+          <span>Export report</span>
+        </Button>
+        <Button className="bg-purple-600 text-white flex items-center gap-2 hover:bg-purple-700">
+          <PlusIcon className="w-4 h-4" />
+          <span>Invite</span>
+        </Button>
       </div>
     </div>
   );
