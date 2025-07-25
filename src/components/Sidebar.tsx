@@ -32,6 +32,7 @@ import {
 } from "./ui/dropdown-menu";
 import NavItem from "./NavItem";
 import { ThemeToggle } from "./ThemeToggle";
+import SideBarMenuChild from "./SideBarMenuChild";
 
 export default function Sidebar() {
   return (
@@ -46,8 +47,7 @@ export default function Sidebar() {
             className="h-7 w-auto"
             loading="lazy"
           />
-           <span className="font-bold tracking-widest uppercase text-lg text-gray-900 dark:text-white mb-0.5 ml-0.5"
->
+           <span className="font-bold tracking-widest uppercase text-lg text-gray-900 dark:text-white mb-0.5 ml-0.5">
             PRISM
           </span> 
           </div>
@@ -66,35 +66,60 @@ export default function Sidebar() {
           </kbd>
         </div>
         <nav className="space-y-2">
-          <NavItem icon={<Home className="w-4 h-4" />} title="Home" />
+          <NavItem icon={<Home className="w-4 h-4" />} title="Home" hasChildren>
+           <SideBarMenuChild data={["Analytics", "Team"]}/>
+          </NavItem>
           <NavItem
             icon={<LayoutDashboard className="w-4 h-4" />}
             title="Dashboard"
             hasChildren
           >
-            <div className="font-semibold text-sm leading-trim-none tracking-normal py-1.5 text-gray-700 dark:text-foreground">
-              Analytics
-            </div>
-            <div className="font-semibold text-sm leading-trim-none tracking-normal py-1.5 text-gray-700 dark:text-foreground">
-              Team
-            </div>
+           <SideBarMenuChild 
+            data={[
+              "Analytics",
+              "Team",
+              "Projects",
+              "Billing",
+              "Invoices",
+              "Settings",
+            ]}
+           />
           </NavItem>
           <NavItem
             icon={<FileText className="w-4 h-4" />}
             title="Projects"
             hasChildren
-          />
+          >
+              <SideBarMenuChild 
+                data={["Analytics", "Team", "Projects", "Billing", "Invoices", "Settings"]}
+              />
+            </NavItem>
           <NavItem
             icon={<CheckSquare className="w-4 h-4" />}
             title="Tasks"
             hasChildren
             badgeCount={8}
-          />
+          >
+            <SideBarMenuChild 
+                data={[  
+                  "Analytics",
+                  "Team",
+                  "Projects",
+                  "Billing",
+                  "Invoices",
+                  "Settings",
+                ]}
+              />
+
+            </NavItem>
           <NavItem
             icon={<Clock className="w-4 h-4" />}
             title="Reporting"
             hasChildren
-          />
+          >
+            <SideBarMenuChild data={["Analytics", "Team", "Projects", "Billing", "Invoices", "Settings"]} />
+
+            </NavItem>
           <NavItem
             icon={<Users className="w-4 h-4" />}
             title="Users"
@@ -201,7 +226,7 @@ export default function Sidebar() {
                 className="w-full justify-start py-6 px-2"
               >
                 <Avatar className="w-8 h-8">
-                  <AvatarImage src={"/secondUser.png"} />
+                  <AvatarImage src={"/secondUser.png"}/>
                   <AvatarFallback>OR</AvatarFallback>
                 </Avatar>
                 <div className="flex-1 text-left">
@@ -212,7 +237,7 @@ export default function Sidebar() {
                     sienna@untitledui.com
                   </div>
                 </div>
-                <Circle className="ml-auto h-4 w-4" />
+                <Circle className="ml-13 h-4 w-4" />
               </Button>
             </DropdownMenuItem>
             <DropdownMenuItem>

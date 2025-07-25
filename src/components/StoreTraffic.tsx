@@ -42,7 +42,7 @@ export default function StoreTraffic() {
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="12m" className="w-full">
-          <TabsList className="mb-4 bg-transparent border-none shadow-none gap-1 flex">
+          <TabsList className="mb-4 bg-transparent border-none shadow-none gap-1 flex flex-wrap">
             {["12m", "3m", "30d", "7d", "24h"].map((range) => (
               <TabsTrigger
                 key={range}

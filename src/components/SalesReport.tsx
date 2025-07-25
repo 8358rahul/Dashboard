@@ -102,7 +102,7 @@ export default function SalesReport() {
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="12m" className="w-full">
-          <TabsList className="mb-4 bg-transparent border-none shadow-none gap-1 flex">
+          <TabsList className="mb-4 bg-transparent border-none shadow-none gap-1 flex flex-wrap">
             {[
               { label: "12 months", value: "12m" },
               { label: "3 months", value: "3m" },

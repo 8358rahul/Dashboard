@@ -3,7 +3,7 @@ import { activityData } from "../data/activity";
 interface ActivityItem {
   user: string;
   action: string;
-  image: string;
+  image?: string;
   online?: boolean; 
 }
 
@@ -24,7 +24,7 @@ export default function ActivityFeed() {
           <div key={i} className="flex items-start gap-3"> 
             <div className="relative">
               <img
-                src={item.image}
+                src={item?.image ? item.image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGEZghB-stFaphAohNqDAhEaXOWQJ9XvHKJw&s"}
                 alt={item.user}
                 className="w-10 h-10 rounded-full object-cover"
                 loading="lazy"

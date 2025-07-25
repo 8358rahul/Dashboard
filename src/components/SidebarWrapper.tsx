@@ -13,16 +13,15 @@ export default function SidebarWrapper() {
       <div className="lg:hidden fixed top-4 left-4 z-[60]">
         <button
           onClick={() => setOpen(true)}
-          className="p-2 rounded-full bg-white dark:bg-gray-900 shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-
-           aria-label="Open sidebar"
+          className="p-2 rounded-full bg-background shadow-md hover:bg-muted transition"
+          aria-label="Open sidebar"
         >
-          <Menu className="w-6 h-6 text-gray-800 dark:text-white" />
+          <Menu className="w-6 h-6 text-foreground" />
         </button>
       </div>
 
       {/* Desktop sidebar */}
-      <aside className="hidden lg:flex fixed top-0 left-0 w-64 h-screen z-40 bg-white dark:bg-gray-800 border-r">
+      <aside className="hidden lg:flex fixed top-0 left-0 w-64 h-screen z-40 bg-background border-r">
         <Sidebar />
       </aside>
 
@@ -38,7 +37,7 @@ export default function SidebarWrapper() {
 
         {/* Slide-in sidebar */}
         <aside
-          className={`fixed top-0 left-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg transform transition-transform duration-300 ${
+          className={`fixed top-0 left-0 h-full w-64 bg-background shadow-lg transform transition-transform duration-300 ${
             open ? "translate-x-0" : "-translate-x-full"
           }`}
         >
@@ -46,7 +45,7 @@ export default function SidebarWrapper() {
             <button
               onClick={() => setOpen(false)}
               aria-label="Close sidebar"
-              className="text-gray-600 hover:text-gray-800 dark:text-gray-300"
+              className="text-muted-foreground hover:text-foreground transition"
             >
               <X className="w-6 h-6" />
             </button>

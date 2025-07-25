@@ -80,21 +80,18 @@ export const activityData = [
     user: "Liam Smith",
     action: "Completed CSS Challenges",
     online: true,
-    image:
-      "https://images.unsplash.com/photo-1603415526982-051d79300777?auto=format&fit=crop&w=256&q=80",
+    
   },
   {
     user: "Zara Malik",
     action: "Watched Next.js Crash Course",
     online: false,
-    image:
-      "https://images.unsplash.com/photo-1544725176-7c40e5a2c9f8?auto=format&fit=crop&w=256&q=80",
+     
   },
   {
     user: "Omar Bukhari",
     action: "Purchased Tailwind UI Kit",
     online: true,
-    image:
-      "https://images.unsplash.com/photo-1544005313-3f111b145dbc?auto=format&fit=crop&w=256&q=80",
+    
   },
 ];
