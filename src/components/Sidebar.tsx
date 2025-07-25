@@ -31,22 +31,26 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import NavItem from "./NavItem";
+import { ThemeToggle } from "./ThemeToggle";
 
 export default function Sidebar() {
   return (
-    <aside className="w-64 bg-white dark:bg-gray-800 h-screen border-r px-4 py-6 flex flex-col justify-between overflow-y-auto">
+    <aside className="w-64 bg-background border-r border-border h-screen px-4 py-6 flex flex-col justify-between overflow-y-auto">
       {/* top view */}
       <div>
-        <div className="text-xl font-bold mb-6">
-          <img src="/logo.svg" alt="Logo" className="h-8 w-auto" />
+        <div className="text-xl font-bold mb-6 flex items-center justify-between">
+          <img src="/logo.svg" alt="Logo" className="h-8 w-auto" loading="lazy"/>
+                  <ThemeToggle />
+          
         </div>
         <div className="relative mb-6">
           <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
           <input
             type="text"
             placeholder="Search"
-            className="pl-8 pr-20 py-2 w-full rounded-md border text-sm cursor-pointer bg-background"
-            disabled={true}
+              className="pl-8 pr-20 py-2 w-full rounded-md border border-border text-sm text-foreground bg-background cursor-pointer"
+
+             disabled={true}
           />
           <kbd className="absolute right-3 top-2.5 pointer-events-none inline-flex items-center gap-1 rounded border bg-muted px-1.5 py-0.5 text-xs font-mono text-muted-foreground opacity-100">
             <span className="text-xs">⌘</span>K
@@ -59,10 +63,10 @@ export default function Sidebar() {
             title="Dashboard"
             hasChildren
           >
-            <div className="font-semibold text-sm leading-trim-none tracking-normal py-1.5 text-gray-700 dark:text-gray-300">
+            <div className="font-semibold text-sm leading-trim-none tracking-normal py-1.5 text-gray-700 dark:text-foreground">
               Analytics
             </div>
-            <div className="font-semibold text-sm leading-trim-none tracking-normal py-1.5 text-gray-700 dark:text-gray-300">
+            <div className="font-semibold text-sm leading-trim-none tracking-normal py-1.5 text-gray-700 dark:text-foreground">
               Team
             </div>
           </NavItem>
@@ -122,7 +126,7 @@ export default function Sidebar() {
                 <AvatarFallback>OR</AvatarFallback>
               </Avatar>
               <div className="flex-1 text-left">
-                <div className="text-sm mb-1 font-medium leading-none text-gray-900 dark:text-gray-100">
+                <div className="text-sm mb-1 font-medium leading-none text-foreground dark:text-foreground">
                   Olivia Rhye
                 </div>
                 <div className="text-xs leading-none text-muted-foreground">
@@ -170,7 +174,7 @@ export default function Sidebar() {
                 <AvatarFallback>OR</AvatarFallback>
               </Avatar>
               <div className="flex-1 text-left">
-                <div className="text-sm mb-1 font-medium leading-none text-gray-900 dark:text-gray-100">
+                <div className="text-sm mb-1 font-medium leading-none text-foreground dark:text-foreground">
                   Olivia Rhye
                 </div>
                 <div className="text-xs leading-none text-muted-foreground">
@@ -192,7 +196,7 @@ export default function Sidebar() {
                 <AvatarFallback>OR</AvatarFallback>
               </Avatar>
               <div className="flex-1 text-left">
-                <div className="text-sm mb-1 font-medium leading-none text-gray-900 dark:text-gray-100">
+                <div className="text-sm mb-1 font-medium leading-none text-foreground dark:text-foreground">
                Sienna Hewitt
                 </div>
                 <div className="text-xs leading-none text-muted-foreground">
@@ -205,7 +209,7 @@ export default function Sidebar() {
             <DropdownMenuItem>
                 <Button
               variant="outline"
-              className="w-full justify-center py-5 px-2"
+              className="w-full justify-center py-4 px-2"
             >
               + Add account
             </Button>

@@ -11,11 +11,14 @@ export default function Header() {
         </h5>
       </div>
       <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
-        <Button variant="outline" className="flex items-center gap-2">
+        <Button
+          variant="outline"
+          className="flex items-center gap-2 cursor-pointer"
+        >
           <DownloadCloudIcon className="w-4 h-4" />
           <span>Export report</span>
         </Button>
-        <Button className="bg-purple-600 text-white flex items-center gap-2 hover:bg-purple-700">
+        <Button className="text-white flex items-center gap-2 hover:bg-purple-700 cursor-pointer">
           <PlusIcon className="w-4 h-4" />
           <span>Invite</span>
         </Button>

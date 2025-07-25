@@ -6,7 +6,7 @@ export default function AddAgentDialog() {
     <Dialog>
       <div className="flex justify-center">
         <DialogTrigger asChild>
-          <Button variant="outline" className="w-32 h-12">
+          <Button variant="outline" className="w-28 h-10">
             + Add
           </Button>
         </DialogTrigger>

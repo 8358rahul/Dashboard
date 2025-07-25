@@ -1,10 +1,20 @@
-// tailwind.config.js
-module.exports = {
-  theme: {
-    extend: {
-      fontFamily: {
-        body: ['Your Font Family', 'sans-serif'], // Replace with your actual font
-      },
+module.exports = { 
+    darkMode: 'class',
+theme: {
+  extend: {
+    spacing: {
+      '13': '52px', // if you need custom
+    },
+    fontSize: {
+      base: ['16px', '24px'],
+    },
+    colors: {
+      primary: '#632CA6',
+    },
+    boxShadow: {
+      custom: '0 4px 12px rgba(0, 0, 0, 0.1)',
     },
   },
+}
+
 }

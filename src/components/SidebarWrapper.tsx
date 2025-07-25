@@ -13,8 +13,9 @@ export default function SidebarWrapper() {
       <div className="lg:hidden fixed top-4 left-4 z-[60]">
         <button
           onClick={() => setOpen(true)}
-          className="p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition"
-          aria-label="Open sidebar"
+          className="p-2 rounded-full bg-white dark:bg-gray-900 shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+
+           aria-label="Open sidebar"
         >
           <Menu className="w-6 h-6 text-gray-800 dark:text-white" />
         </button>
