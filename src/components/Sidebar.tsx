@@ -33,8 +33,11 @@ import {
 import NavItem from "./NavItem";
 import { ThemeToggle } from "./ThemeToggle";
 import SideBarMenuChild from "./SideBarMenuChild";
+import { useMediaQuery } from "../hooks/useMediaQuery ";
 
 export default function Sidebar() {
+    const isLarge = useMediaQuery("(min-width: 1024px)");
+
   return (
     <aside className="w-64 bg-background h-screen px-4 py-6 flex flex-col justify-between overflow-y-auto">
       {/* top view */}
@@ -171,7 +174,7 @@ export default function Sidebar() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent
-            side="right"
+            side={isLarge ? "right" : "bottom"}
             align="start"
             sideOffset={4}
             className="w-72 gap-1"

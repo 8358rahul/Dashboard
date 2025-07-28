@@ -193,35 +193,39 @@ export default function FilterBar() {
             </div>
 
             {/* Footer Buttons */}
-            <div className="flex justify-between gap-2 mt-4">
-              <div className="flex gap-2">
-                <Button variant="outline">
-                  {date?.from?.toLocaleDateString("en-US", {
-                    month: "long",
-                    day: "numeric",
-                    year: "numeric",
-                  })}
-                </Button>
-                <Button variant="outline">
-                  {date?.to?.toLocaleDateString("en-US", {
-                    month: "long",
-                    day: "numeric",
-                    year: "numeric",
-                  })}
-                </Button>
-              </div>
-              <div className="flex gap-2">
-                <Button variant="outline" onClick={() => setOpen(false)}>
-                  Cancel
-                </Button>
-                <Button
-                  className="bg-purple-600 text-white dark:bg-purple-500"
-                  onClick={() => setOpen(false)}
-                >
-                  Apply
-                </Button>
-              </div>
-            </div>
+           <div className="flex flex-col sm:flex-row sm:justify-between gap-4 mt-4">
+  {/* Date Buttons */}
+  <div className="flex gap-2 justify-start sm:justify-start">
+    <Button variant="outline">
+      {date?.from?.toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      })}
+    </Button>
+    <Button variant="outline">
+      {date?.to?.toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      })}
+    </Button>
+  </div>
+
+  {/* Action Buttons */}
+  <div className="flex gap-2 justify-start sm:justify-end mt-2 sm:mt-0">
+    <Button variant="outline" onClick={() => setOpen(false)}>
+      Cancel
+    </Button>
+    <Button
+      className="bg-purple-600 text-white dark:bg-purple-500"
+      onClick={() => setOpen(false)}
+    >
+      Apply
+    </Button>
+  </div>
+</div>
+
           </PopoverContent>
         </Popover>
 
