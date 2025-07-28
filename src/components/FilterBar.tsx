@@ -6,9 +6,11 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
 import { format } from "date-fns";
 import type { DateRange } from "react-day-picker";
+import StatusFilterModal from "./StatusFilterModal";
 
 export default function FilterBar() {
   const [tab, setTab] = useState<string>("default");
+  const [filters, setFilters] = useState<string[]>([])
   const [open, setOpen] = useState(false);
   const [date, setDate] = useState<DateRange | undefined>({
     from: new Date(2025, 6, 20),
@@ -224,12 +226,13 @@ export default function FilterBar() {
         </Popover>
 
         {/* Filters Button */}
-        <Button variant="outline" className="flex items-center gap-2">
+      <StatusFilterModal onApply={setFilters} button={
+          <Button variant="outline" className="flex items-center gap-2">
           <ListFilter className="w-4 h-4" />
-         
-                    <span className="hidden sm:inline">Filters</span>
-
+         <span className="hidden sm:inline">Filters</span>
         </Button>
+      }/>
+
       </div>
     </div>
   );

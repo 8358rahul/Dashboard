@@ -21,7 +21,7 @@ export default function SidebarWrapper() {
       </div>
 
       {/* Desktop sidebar */}
-      <aside className="hidden lg:flex fixed top-0 left-0 w-64 h-screen z-40 bg-background border-r">
+      <aside className="hidden lg:flex fixed top-0 left-0 w-64 h-screen z-40 bg-background">
         <Sidebar />
       </aside>
 

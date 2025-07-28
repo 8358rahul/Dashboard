@@ -36,7 +36,7 @@ import SideBarMenuChild from "./SideBarMenuChild";
 
 export default function Sidebar() {
   return (
-    <aside className="w-64 bg-background border-r border-border h-screen px-4 py-6 flex flex-col justify-between overflow-y-auto">
+    <aside className="w-64 bg-background h-screen px-4 py-6 flex flex-col justify-between overflow-y-auto">
       {/* top view */}
       <div>
         <div className="text-xl font-bold mb-6 flex items-center justify-between">
