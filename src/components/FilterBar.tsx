@@ -10,7 +10,7 @@ import StatusFilterModal from "./StatusFilterModal";
 
 export default function FilterBar() {
   const [tab, setTab] = useState<string>("default");
-  const [filters, setFilters] = useState<string[]>([])
+  const [, setFilters] = useState<string[]>([])
   const [open, setOpen] = useState(false);
   const [date, setDate] = useState<DateRange | undefined>({
     from: new Date(2025, 6, 20),
